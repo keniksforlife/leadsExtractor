@@ -7,13 +7,11 @@ import re
 import requests
 import asyncio
 from fastapi import FastAPI, HTTPException, Request
-from pydantic import BaseModel
-from pyppeteer import launch
+
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
 
 
 def create_session(username, password):
