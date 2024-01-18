@@ -9,6 +9,11 @@ import asyncio
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from pyppeteer import launch
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 def create_session(username, password):
@@ -431,9 +436,8 @@ async def scrape(request: Request):
         output_csv_path = "output.csv"  # Generate a unique name as needed
         show_result = "1"  # or take this from the request
 
-        # Assuming you modify your scraping functions to be async or run them in a thread pool
-        username = "kentluckybuhawe@gmail.com"  # input("Username: ")
-        password = 'E$oxO5,isT8jjCN5"LVt'  # input("Password: ")
+        username = os.getenv("username")
+        password = os.getenv("password")
 
         loop = asyncio.get_running_loop()
         session, view_id = await loop.run_in_executor(None, create_session, username, password)
