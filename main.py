@@ -477,7 +477,7 @@ def unlocked_emails(json_data, username, password):
 
     user_data_dir = r'/Users/kentluckybuhawe/Library/Application Support/Google/Chrome/Default'
     chrome_options.add_argument(f"user-data-dir={user_data_dir}")
-    chrome_driver_path = './selenium/chromedriver'
+    chrome_driver_path = './selenium_linux/chromedriver'
     service = Service(chrome_driver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
