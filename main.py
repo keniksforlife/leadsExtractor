@@ -475,8 +475,8 @@ def unlocked_emails(json_data, username, password):
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument('window-size=1200x600')  # Or another suitable size
 
-    user_data_dir = r'/Users/kentluckybuhawe/Library/Application Support/Google/Chrome/Default'
-    chrome_options.add_argument(f"user-data-dir={user_data_dir}")
+    # user_data_dir = r'/Users/kentluckybuhawe/Library/Application Support/Google/Chrome/Default'
+    # chrome_options.add_argument(f"user-data-dir={user_data_dir}")
     chrome_driver_path = './selenium_linux/chromedriver'
     service = Service(chrome_driver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)
